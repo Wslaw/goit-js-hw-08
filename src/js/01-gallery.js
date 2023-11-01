@@ -42,36 +42,22 @@ function createGalleryItemsMarkup(items) {
       };
 
 
-//  const lightbox = new SimpleLightbox(".gallery a", {
-  //  captionsData: "alt",
-  //  captionPosition: "top-right",
-  //  captionDelay: 250,
-  //  closeText: "",
-  //  animationSpeed: 300,
-  //  enableKeyboard: true,
-  //  doubleTapZoom: 1.5,
-  //  });
-  
-  
   
   let gallery = new SimpleLightbox('.gallery a', {
       captionsData: 'alt',
       captionPosition: 'top',
       heightRatio: 0.8,
-       showCounter: 0,
-
-  // captionDelay: 250,
-  //   closeText: "",
-  //   showCounter: false,
-  //   animationSpeed: 300,
-  //   enableKeyboard: true,
-  //   doubleTapZoom: 1.5,
-  //   fadeSpeed: 250,
+        showCounter: 0,
+      nav: true,
+      navText: ['←', '→'],
+    //   closeText: "",
+       close: false,
 });
 
 
 gallery.on("show.simplelightbox", function () {
 itemStyleLink.style.display = "none";
+
 });
 
 
