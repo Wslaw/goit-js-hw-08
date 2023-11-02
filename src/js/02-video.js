@@ -10,7 +10,6 @@
 
 
 const vPlayer = document.getElementById('vimeo-player');
-console.log('<<<<<<<<<<<<<<<<<<<played the video!>>>>>>>>>>>>>>>>>');
 
 // --------------------------------------------
 import Player from '@vimeo/player';
@@ -19,3 +18,10 @@ import throttle from 'lodash.throttle';
 const player = new Player(vPlayer);
 
 
+const onPlay = function(data) {
+    console.log('<played the video!>>>>>>>>>>>>>>>>>');
+    // data is an object containing properties specific to that event
+
+};
+
+player.on('play', onPlay);
