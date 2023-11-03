@@ -10,7 +10,9 @@ body.style.transition = 'background-color 2s linear-out';
 
 const form = document.querySelector('form');
 // const form = document.querySelector('.feedback-form');
-const inputSave = input.addEventListener("input[name='email']");
+const inputSave = input.addEventListener(
+  "input[name='email'] { passive: true }"
+);
 console.log('PRIVET ORLAM');
 console.log(inputSave);
 
