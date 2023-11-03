@@ -1,0 +1,2 @@
+!function(){document.querySelector("a").classList.add("link");var t=document.querySelector("form");function e(){return"#".concat(Math.floor(16777215*Math.random()).toString(16).padStart(6,0))}t.parentNode.style.background="linear-gradient(to bottom, ".concat(e(),", ").concat(e(),")"),t.style.margin="200px 180px";document.querySelector(".feedback-form");input.addEventListener(input),console.log(input),localStorage.setItem(),localStorage.getItem(),localStorage.removeItem()}();
+//# sourceMappingURL=03-feedback.ee65f172.js.map
