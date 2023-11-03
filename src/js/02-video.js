@@ -17,24 +17,31 @@ const videoCurrentTime = document.getElementById('vimeo-player');
 const player = new Player(videoCurrentTime);
 const onTimeUpdate = function (currentTime) {
   localStorage.setItem('videoCurrentTime', JSON.stringify(currentTime.seconds));
-
-//   console.log('<played the video!>', currentTime.seconds);
+  //   console.log('<played the video!>', currentTime.seconds);
 };
 
 player.on('timeupdate', throttle(onTimeUpdate, 1000));
 
 try {
-    const savedTime = localStorage.getItem('videoCurrentTime');
-    if (savedTime || 0) {
-        const parseSavedTime = JSON.parse(savedTime);
-        player.setCurrentTime(parseSavedTime);
-    }
-    
-    console.log('savedTime', savedTime);
+  const savedTime = localStorage.getItem('videoCurrentTime');
+  if (savedTime || 0) {
+    const parseSavedTime = JSON.parse(savedTime);
+    player.setCurrentTime(parseSavedTime);
+  }
+
+  console.log('savedTime', savedTime);
 } catch (error) {
-    console.log('Сталась помилка');    
+  console.log('Сталась помилка');
 }
 // *********************************
-getVolume();
-setVolume(volume);
-// *********************************
+// videoCurrentTime.parentNode.style.backgroundColor = getRandomHexColor();
+videoCurrentTime.parentNode.style.background = `linear-gradient(to bottom, ${getRandomHexColor()}, ${getRandomHexColor()})`;
+videoCurrentTime.style.margin = '200px 180px';
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 1677721)
+        .toString(16)
+        .padStart(6, 0)}`;
+    }
+    const link = document.querySelector('a');
+    link.style.color = `${getRandomHexColor()}`;
+    // *********************************
