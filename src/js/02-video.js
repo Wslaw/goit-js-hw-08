@@ -13,18 +13,28 @@ import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 // const throttle = require('lodash.throttle');
 
-const vPlayer = document.getElementById('vimeo-player');
-const player = new Player(vPlayer);
-const onPlay = function (currentTime) {
-localStorage.setItem(vPlayer,currentTime.seconds)
-  console.log('<played the video!>', currentTime.seconds);
-  console.log('timeupdate:', timeupdate);
+const videoCurrentTime = document.getElementById('vimeo-player');
+const player = new Player(videoCurrentTime);
+const onTimeUpdate = function (currentTime) {
+  localStorage.setItem('videoCurrentTime', JSON.stringify(currentTime.seconds));
+
+//   console.log('<played the video!>', currentTime.seconds);
 };
 
-player.on('timeupdate', onPlay);
+player.on('timeupdate', throttle(onTimeUpdate, 1000));
 
-
-// const currentTime = player.getCurrentTime();
-// console.log(onPlay);
-
-
+try {
+    const savedTime = localStorage.getItem('videoCurrentTime');
+    if (savedTime || 0) {
+        const parseSavedTime = JSON.parse(savedTime);
+        player.setCurrentTime(parseSavedTime);
+    }
+    
+    console.log('savedTime', savedTime);
+} catch (error) {
+    console.log('Сталась помилка');    
+}
+// *********************************
+getVolume();
+setVolume(volume);
+// *********************************
