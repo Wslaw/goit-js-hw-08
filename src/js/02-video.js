@@ -21,7 +21,9 @@ const onTimeUpdate = function (currentTime) {
 };
 
 player.on('timeupdate', throttle(onTimeUpdate, 1000));
-
+// -------А це щоб не дуже гучно було при перевірці----------
+player.setVolume(0.3);
+// ---------------------------------------------------------
 try {
   const savedTime = localStorage.getItem('videoCurrentTime');
   if (savedTime || 0) {
@@ -34,14 +36,21 @@ try {
   console.log('Сталась помилка');
 }
 // *********************************
-// videoCurrentTime.parentNode.style.backgroundColor = getRandomHexColor();
-videoCurrentTime.parentNode.style.background = `linear-gradient(to bottom, ${getRandomHexColor()}, ${getRandomHexColor()})`;
+videoCurrentTime.parentNode.style.background = `linear-gradient(to bottom, ${getRandomHexColor()}, ${getRandomHexColor()}, ${getRandomHexColor()})`;
 videoCurrentTime.style.margin = '200px 180px';
 function getRandomHexColor() {
-    return `#${Math.floor(Math.random() * 1677721)
-        .toString(16)
-        .padStart(6, 0)}`;
-    }
-    const link = document.querySelector('a');
-    link.style.color = `${getRandomHexColor()}`;
-    // *********************************
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+  // *********************************
+}
+
+// --------------Сonnecting styles---------------------------
+// const link = document.querySelector('a');
+// link.style.color = `${getRandomHexColor()}`;
+const itemStyle = document.querySelector('a');
+itemStyle.classList.add('link');
+const itemStyleLink = document.querySelector('.link');
+itemStyleLink.style.width = "fit-content"
+
+// ------------------------------------------------------------

@@ -13,5 +13,19 @@
       <li><a href="02-video.html">Video playback</a></li>
       <li><a href="03-feedback.html">Feedback form</a></li>
     </ul>
+    <script>
+      const numStars = 1000;
+    function createStars() {
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = `${Math.random() * window.innerWidth}px`;
+        star.style.top = `${Math.random() * window.innerHeight}px`;
+        document.body.appendChild(star);
+      }
+    }
+    createStars();
+    </script>
+    <script src="js/gallery-items.js" type="module"></script>
   </body>
 </html>

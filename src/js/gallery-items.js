@@ -63,3 +63,19 @@ export const galleryItems = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+
+
+// ***************************************************************//
+const container = document.querySelector('body');
+container.style.background = ` ${getRandomHexColor()}`;
+const itemEl = document.querySelectorAll('li');
+itemEl.forEach((elem) => {
+  elem.classList.add('link'); 
+});
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+  
