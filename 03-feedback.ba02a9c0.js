@@ -1,2 +1,0 @@
-document.querySelector("a").classList.add("link");const t=document.querySelector("form");function e(){return`#${Math.floor(16777215*Math.random()).toString(16).padStart(6,0)}`}t.parentNode.style.background=`linear-gradient(to bottom, ${e()}, ${e()})`,t.style.margin="200px 180px";document.querySelector(".feedback-form");input.addEventListener(input),console.log(input),localStorage.setItem(),localStorage.getItem(),localStorage.removeItem();
-//# sourceMappingURL=03-feedback.ba02a9c0.js.map

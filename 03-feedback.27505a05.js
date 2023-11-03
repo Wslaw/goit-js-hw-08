@@ -1,0 +1,2 @@
+!function(){document.querySelector("a").classList.add("link");var t=document.querySelector("body");t.style.background="linear-gradient(to right, ".concat(e(),", ").concat(e(),")"),t.style.transition="background-color 2s linear-out";document.querySelector("form");var o=input.addEventListener("input[name='email']");function e(){return"#".concat(Math.floor(16777215*Math.random()).toString(16).padStart(6,0))}console.log("PRIVET ORLAM"),console.log(o),localStorage.setItem(),localStorage.getItem(),localStorage.removeItem()}();
+//# sourceMappingURL=03-feedback.27505a05.js.map
