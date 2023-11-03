@@ -1,2 +1,0 @@
-document.querySelector("a").classList.add("link");const t=document.querySelector("body");t.style.background=`linear-gradient(to right, ${o()}, ${o()})`,t.style.transition="background-color 2s linear-out";document.querySelector("form");const e=input.addEventListener("input[name='email'] { passive: true }");function o(){return`#${Math.floor(16777215*Math.random()).toString(16).padStart(6,0)}`}console.log("PRIVET ORLAM"),console.log(e),localStorage.setItem(),localStorage.getItem(),localStorage.removeItem();
-//# sourceMappingURL=03-feedback.f2a1e2d1.js.map
