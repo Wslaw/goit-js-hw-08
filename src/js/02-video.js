@@ -8,49 +8,23 @@
 // який ви намагаєтесь прочитати, метод getItem(key) поверне вам null. //
 // //////////////////////////////////////////////////////////////////////
 
-const products = { name: 'Radar', price: 1300, quantity: 4 };
+// --------------------------------------------
+import Player from '@vimeo/player';
+import throttle from 'lodash.throttle';
+// const throttle = require('lodash.throttle');
 
-localStorage.setItem('Test_key', JSON.stringify(products));
-// localStorage.setItem("Test_key", "{products}");
+const vPlayer = document.getElementById('vimeo-player');
+const player = new Player(vPlayer);
+const onPlay = function (currentTime) {
+localStorage.setItem(vPlayer,currentTime.seconds)
+  console.log('<played the video!>', currentTime.seconds);
+  console.log('timeupdate:', timeupdate);
+};
 
-console.log(JSON.parse(localStorage.getItem('Test_key')));
-
-
-
-
-
-
-
-
-
-
+player.on('timeupdate', onPlay);
 
 
-
-// *****************************************
-// localStorage.setItem("Test_key", [1,2,3,1,4,5,4,5,6,7]);
-
-// const vPlayer = document.getElementById('vimeo-player');
-
-// // --------------------------------------------
-// import Player from '@vimeo/player';
-// import throttle from 'lodash.throttle';
-
-// const player = new Player(vPlayer);
-// const onPlay = require('lodash.throttle');
-// // console.log(onPlay);
-
-// console.log(localStorage.getItem('Test_key'));
-// // localStorage.removeItem();
-// // localStorage.clear();
+// const currentTime = player.getCurrentTime();
+// console.log(onPlay);
 
 
-// const onPlay = function(data) {
-//     // const currentTime = player.getCurrentTime()
-//     // console.log(currentTime);
-//     console.log('<played the video!>>>>>>>>>>>>>>>>>');
-//     // data is an object containing properties specific to that event
-// // console.log(timeupdate);
-// };
-
-// // player.on('timeupdate', onPlay);
