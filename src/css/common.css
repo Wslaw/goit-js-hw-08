@@ -37,6 +37,8 @@ img {
   background: linear-gradient(to bottom, #0147a6, #fff49f);
   background-color: #82d8e5;
   box-shadow: 4px 4px 0px 1px rgba(56, 100, 105, 0.5);
+    transition: background-color 2s linear;
+
 }
  .star {
       position: absolute;
@@ -44,7 +46,7 @@ img {
       width: 3px;
       height: 3px;
       opacity: 0; /* Початково зробимо зірки невидимими */
-      animation: blinkAnimation 3s infinite alternate; /* Додаємо анімацію */
+      animation: blinkAnimation 1.5s infinite alternate; /* Додаємо анімацію */
     }
 
     @keyframes blinkAnimation {

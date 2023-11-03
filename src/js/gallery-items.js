@@ -68,6 +68,7 @@ export const galleryItems = [
 // ***************************************************************//
 const container = document.querySelector('body');
 container.style.background = ` ${getRandomHexColor()}`;
+container.style.transition = 'background-color 2s linear';
 const itemEl = document.querySelectorAll('li');
 itemEl.forEach((elem) => {
   elem.classList.add('link'); 

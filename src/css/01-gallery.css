@@ -68,4 +68,6 @@ body {
   background: linear-gradient(to bottom, #0147a6, #fff49f);
   background-color: #82d8e5;
   box-shadow: 4px 4px 0px 1px rgba(56, 100, 105, 0.5);
+  transition: background-color 2s linear;
+
 }

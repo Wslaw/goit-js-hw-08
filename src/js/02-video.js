@@ -37,6 +37,8 @@ try {
 }
 // *********************************
 videoCurrentTime.parentNode.style.background = `linear-gradient(to bottom, ${getRandomHexColor()}, ${getRandomHexColor()}, ${getRandomHexColor()})`;
+videoCurrentTime.parentNode.style.transition = 'background 2s linear';
+
 videoCurrentTime.style.margin = '200px 180px';
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -51,6 +53,6 @@ function getRandomHexColor() {
 const itemStyle = document.querySelector('a');
 itemStyle.classList.add('link');
 const itemStyleLink = document.querySelector('.link');
-itemStyleLink.style.width = "fit-content"
+itemStyleLink.style.width = 'fit-content';
 
 // ------------------------------------------------------------

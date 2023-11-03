@@ -1,26 +1,22 @@
 // --------------Сonnecting styles---------------------------
 const itemStyle = document.querySelector('a');
 itemStyle.classList.add('link');
-// const itemStyleLink = document.querySelector(".link")
+const body = document.querySelector('body');
+body.style.background = `linear-gradient(to right, ${getRandomHexColor()}, ${getRandomHexColor()})`;
+body.style.transition = 'background-color 2s linear-out';
 
-const bGround = document.querySelector('form');
-bGround.parentNode.style.background = `linear-gradient(to bottom, ${getRandomHexColor()}, ${getRandomHexColor()})`;
-bGround.style.margin = '200px 180px';
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+// form.style.margin = '200px 180px';
 // ------------------------------------------------------------
 
-const form = document.querySelector('.feedback-form');
-input.addEventListener(input);
-console.log(input);
+const form = document.querySelector('form');
+// const form = document.querySelector('.feedback-form');
+const inputSave = input.addEventListener("input[name='email']");
+console.log('PRIVET ORLAM');
+console.log(inputSave);
 
 localStorage.setItem();
 localStorage.getItem();
 localStorage.removeItem();
-
 
 // В HTML есть разметка формы. Напиши скрипт который будет сохранять значения полей в локальное хранилище когда пользователь что-то печатает.
 
@@ -45,3 +41,10 @@ localStorage.removeItem();
 // При сабмите формы очищай хранилище и поля формы, а также выводи объект с полями email, message и текущими их значениями в консоль.
 // Сделай так, чтобы хранилище обновлялось не чаще чем раз в 500 миллисекунд. Для этого добавь в проект и используй
 // библиотеку lodash.throttle.
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+// --without red color - #00FFFF-------
