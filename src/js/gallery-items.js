@@ -1,3 +1,5 @@
+
+import { getRandomHexColor } from './helpers.js';
 export const galleryItems = [
   {
     preview:
@@ -72,11 +74,6 @@ itemEl.forEach((elem) => {
   elem.classList.add('link'); 
 });
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-  }
-  
   container.style.background = ` ${getRandomHexColor()}`;
   container.style.transition = 'background-color 2s linear';
+  
