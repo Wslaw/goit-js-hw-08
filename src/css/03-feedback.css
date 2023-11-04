@@ -3,31 +3,47 @@
   flex-direction: column;
   max-width: 480px;
   padding: 12px;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  background-color: hsl(179, 57%, 82%);
+  border: 1px solid rgba(119, 108, 213, 0.12);
+  border-radius: 10px;
+    font-weight: 500;
+
 }
 
 .feedback-form label {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+ 
 }
 
 .feedback-form button {
   padding: 8px 12px;
   font: inherit;
   cursor: pointer;
+  background-color: #a6dee6;
+  border: 1px solid rgb(9, 133, 142);
+  border-radius: 12px;
+  font-size: larger;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 input,
 textarea {
   padding: 8px;
   font: inherit;
+  background-color: #d6f2f6;
+  border: 1px solid rgb(9, 133, 142);
+  border-radius: 12px; 
+  
+  
 }
 
 textarea {
   resize: none;
+    background-color: #d6f2f6;
+
 }
 
 .link {

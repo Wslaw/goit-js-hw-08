@@ -49,5 +49,5 @@ itemStyle.classList.add('link');
 itemStyle.style.width = 'fit-content';
 videoCurrentTime.parentNode.style.background = `linear-gradient(to right, ${getRandomHexColor()}, ${getRandomHexColor()})`;
 videoCurrentTime.parentNode.style.transition = 'background 2s linear';
-videoCurrentTime.style.margin = '100px 100px';
+videoCurrentTime.style.margin = '50px';
 // ------------------------------------------------------------
