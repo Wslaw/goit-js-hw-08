@@ -5,10 +5,16 @@ import { galleryItems } from './gallery-items';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const galleryContainer = document.querySelector('.gallery');
-const itemsMarkup = createGalleryItemsMarkup(galleryItems);
 
-galleryContainer.insertAdjacentHTML('beforeend', itemsMarkup);
+const refs = {
+  galleryContainer: document.querySelector('.gallery'),
+  itemStyle: document.querySelector('a'),
+};
+
+
+const itemsMarkup = createGalleryItemsMarkup(galleryItems);
+refs.galleryContainer.insertAdjacentHTML('beforeend', itemsMarkup);
+
 
 function createGalleryItemsMarkup(items) {
   return items
@@ -25,7 +31,7 @@ function createGalleryItemsMarkup(items) {
     </li>`
     )
     .join('');
-}
+};
 
 let gallery = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -33,10 +39,12 @@ let gallery = new SimpleLightbox('.gallery a', {
   heightRatio: 0.8,
   showCounter: 0,
   nav: true,
-  navText: ['←', '→'],
-  //   closeText: "",
   close: false,
 });
+
+// --------------Сonnecting styles---------------------------
+refs.itemStyle.classList.add('link');
+const itemStyleLink = document.querySelector('.link');
 
 gallery.on('show.simplelightbox', function () {
   itemStyleLink.style.display = 'none';
@@ -45,10 +53,5 @@ gallery.on('show.simplelightbox', function () {
 gallery.on('closed.simplelightbox', function () {
   itemStyleLink.style.display = 'block';
 });
-
-// --------------Сonnecting styles---------------------------
-const itemStyle = document.querySelector('a');
-itemStyle.classList.add('link');
-const itemStyleLink = document.querySelector('.link');
-
 // ------------------------------------------------------------
+
