@@ -16,14 +16,19 @@ img {
   display: block;
   max-width: 100%;
 }
-
+/* --------------------------------------------------- */
+ul li a {
+  color:blue;
+  text-decoration: none;
+  text-shadow: 1px 0px 1px rgba(236, 187, 200, 0.9); 
+}
 .link {
   display: block;
   list-style-type: none;
   text-decoration: none;
   margin: 10px;
   background-color: #97a5ff;
-  width: 15%;
+  width: 12%;
   font-size: 16px;
   font-weight: 500;
   color: blue;
