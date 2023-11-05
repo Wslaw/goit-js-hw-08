@@ -11,18 +11,16 @@ const refs = {
 refs.formElem.addEventListener('input', throttle (onFormInput, 500));
 refs.formElem.addEventListener('submit', onFormSubmit);
 
-// onLoad();
-const object = {};
+onLoad();
+const objectToLs = {};
 function onFormInput(event) {
   const key = event.target.name;
-  console.log(key);
   const value = event.target.value;
-  console.log(value);
-  if (key === 'email') {
-    object.email = value;
-  } else { object.message = value };
+    if (key === 'email') {
+    objectToLs.email = value;
+  } else { objectToLs.message = value };
   
-    saveToLs("feedback-form-state",  object );
+    saveToLs("feedback-form-state",  objectToLs );
 }
 function onLoad() {
   const name = loadFromLs('email');
@@ -35,11 +33,11 @@ function onFormSubmit(event) {
   event.preventDefault();
   const email = refs.formElem.elements.email.value;
   const message = refs.formElem.elements.message.value;
-  const obj = {
+  const objectFromLs = {
     email,
     message,
   };
-  console.log(obj);
+  console.log(objectFromLs);
   event.target.reset();
   localStorage.removeItem('email');
   localStorage.removeItem('message');
