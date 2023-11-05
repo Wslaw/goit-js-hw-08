@@ -16,11 +16,8 @@ const objectToLs = {};
 function onFormInput(event) {
   const key = event.target.name;
   const value = event.target.value;
-  if (key === 'email') {
-    objectToLs.email = value;
-  } else {
-    objectToLs.message = value;
-  }
+ 
+  key === 'email' ? (objectToLs.email = value) : (objectToLs.message = value);
 
   saveToLs('feedback-form-state', objectToLs);
 }
@@ -45,9 +42,8 @@ function onFormSubmit(event) {
   };
   console.log('об\'єкт з полями email, message та поточними їх значеннями', objectFromLs);
   event.target.reset();
-  // console.log('REMOve-', event.target);
   localStorage.removeItem('feedback-form-state');
-  // localStorage.removeItem('message');
+  
 }
 
 // --------------Сonnecting styles---------------------------
