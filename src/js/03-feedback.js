@@ -8,7 +8,7 @@ const refs = {
   body: document.querySelector('body'),
 };
 
-refs.formElem.addEventListener('input', throttle (onFormInput, 500));
+refs.formElem.addEventListener('input', throttle(onFormInput, 500));
 refs.formElem.addEventListener('submit', onFormSubmit);
 
 onLoad('feedback-form-state');
@@ -16,15 +16,17 @@ const objectToLs = {};
 function onFormInput(event) {
   const key = event.target.name;
   const value = event.target.value;
-    if (key === 'email') {
+  if (key === 'email') {
     objectToLs.email = value;
-  } else { objectToLs.message = value };
-  
-    saveToLs("feedback-form-state",  objectToLs );
+  } else {
+    objectToLs.message = value;
+  }
+
+  saveToLs('feedback-form-state', objectToLs);
 }
 
 function onLoad() {
-  // 
+  //
   const name = loadFromLs('feedback-form-state').email;
   const message = loadFromLs('feedback-form-state').message;
   refs.formElem.elements.email.value = name || '';
