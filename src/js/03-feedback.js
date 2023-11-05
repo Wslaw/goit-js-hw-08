@@ -26,11 +26,14 @@ function onFormInput(event) {
 }
 
 function onLoad() {
-  //
-  const name = loadFromLs('feedback-form-state').email;
-  const message = loadFromLs('feedback-form-state').message;
-  refs.formElem.elements.email.value = name || '';
-  refs.formElem.elements.message.value = message || '';
+  const savedData = loadFromLs('feedback-form-state');
+  if (savedData) {
+    
+    const name = savedData.email;
+    const message = savedData.message;
+    refs.formElem.elements.email.value = name || '';
+    refs.formElem.elements.message.value = message || '';
+  }
 }
 
 function onFormSubmit(event) {
