@@ -11,12 +11,18 @@ const refs = {
 refs.formElem.addEventListener('input', throttle (onFormInput, 500));
 refs.formElem.addEventListener('submit', onFormSubmit);
 
-onLoad();
-
+// onLoad();
+const object = {};
 function onFormInput(event) {
   const key = event.target.name;
+  console.log(key);
   const value = event.target.value;
-  saveToLs(key, value);
+  console.log(value);
+  if (key === 'email') {
+    object.email = value;
+  } else { object.message = value };
+  
+    saveToLs("feedback-form-state",  object );
 }
 function onLoad() {
   const name = loadFromLs('email');
