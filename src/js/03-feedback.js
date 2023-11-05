@@ -43,7 +43,7 @@ function onFormSubmit(event) {
     email,
     message,
   };
-  console.log('об\'єкт з полями email, message та поточними їх значеннями', objectFromLs);
+  console.log('objectFromLs', objectFromLs);
   event.target.reset();
   // console.log('REMOve-', event.target);
   localStorage.removeItem('feedback-form-state');
