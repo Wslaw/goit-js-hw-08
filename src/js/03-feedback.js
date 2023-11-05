@@ -24,9 +24,7 @@ function onFormInput(event) {
 }
 
 function onLoad() {
-  // console.log("1-",loadFromLs('feedback-form-state'));
-  // console.log(loadFromLs('feedback-form-state').email);
-  // console.log(loadFromLs('feedback-form-state').message);
+  // 
   const name = loadFromLs('feedback-form-state').email;
   const message = loadFromLs('feedback-form-state').message;
   refs.formElem.elements.email.value = name || '';
