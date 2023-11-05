@@ -40,7 +40,7 @@ function onFormSubmit(event) {
     email,
     message,
   };
-  console.log('об\'єкт з полями email, message та поточними їх значеннями', objectFromLs);
+  console.log("То є об'єкт з полями email, message та поточними їх значеннями:", objectFromLs);
   event.target.reset();
   localStorage.removeItem('feedback-form-state');
   
