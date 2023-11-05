@@ -11,7 +11,7 @@ const refs = {
 refs.formElem.addEventListener('input', throttle (onFormInput, 500));
 refs.formElem.addEventListener('submit', onFormSubmit);
 
-onLoad();
+onLoad('feedback-form-state');
 const objectToLs = {};
 function onFormInput(event) {
   const key = event.target.name;
@@ -22,9 +22,13 @@ function onFormInput(event) {
   
     saveToLs("feedback-form-state",  objectToLs );
 }
+
 function onLoad() {
-  const name = loadFromLs('email');
-  const message = loadFromLs('message');
+  // console.log("1-",loadFromLs('feedback-form-state'));
+  // console.log(loadFromLs('feedback-form-state').email);
+  // console.log(loadFromLs('feedback-form-state').message);
+  const name = loadFromLs('feedback-form-state').email;
+  const message = loadFromLs('feedback-form-state').message;
   refs.formElem.elements.email.value = name || '';
   refs.formElem.elements.message.value = message || '';
 }
