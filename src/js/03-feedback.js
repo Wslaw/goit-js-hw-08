@@ -18,7 +18,6 @@ function onFormInput(event) {
   const value = event.target.value;
  
   key === 'email' ? (objectToLs.email = value) : (objectToLs.message = value);
-
   saveToLs('feedback-form-state', objectToLs);
 }
 
@@ -42,8 +41,7 @@ function onFormSubmit(event) {
   };
   console.log("То є об'єкт з полями email, message та поточними їх значеннями:", objectFromLs);
   event.target.reset();
-  localStorage.removeItem('feedback-form-state');
-  
+  localStorage.removeItem('feedback-form-state');  
 }
 
 // --------------Сonnecting styles---------------------------

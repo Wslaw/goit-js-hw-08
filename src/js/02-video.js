@@ -24,13 +24,9 @@ try {
 function onTimeUpdate(currentTime) {
   localStorage.setItem('videoCurrentTime', JSON.stringify(currentTime.seconds));
 };
-
-
 // -------А це щоб не дуже гучно було при перевірці----------
 player.setVolume(0.2);
-// ---------------------------------------------------------
-
-  
+// ---------------------------------------------------------  
 // --------------Сonnecting styles---------------------------
   
 const itemStyle = document.querySelector('a');
