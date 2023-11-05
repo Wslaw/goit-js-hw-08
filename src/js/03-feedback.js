@@ -27,8 +27,7 @@ function onFormInput(event) {
 
 function onLoad() {
   const savedData = loadFromLs('feedback-form-state');
-  if (savedData) {
-    
+  if (savedData && savedData !== null) {
     const name = savedData.email;
     const message = savedData.message;
     refs.formElem.elements.email.value = name || '';
