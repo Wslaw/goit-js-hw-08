@@ -36,3 +36,4 @@ videoCurrentTime.parentNode.style.background = `linear-gradient(to right, ${getR
 videoCurrentTime.parentNode.style.transition = 'background 2s linear';
 videoCurrentTime.style.margin = '50px';
 // ------------------------------------------------------------
+
