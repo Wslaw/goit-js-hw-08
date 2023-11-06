@@ -7,17 +7,19 @@ const refs = {
   itemStyle: document.querySelector('a'),
   body: document.querySelector('body'),
 };
+const objectToLs = {};
 
 refs.formElem.addEventListener('input', throttle(onFormInput, 500));
 refs.formElem.addEventListener('submit', onFormSubmit);
 
 onLoad('feedback-form-state');
-const objectToLs = {};
+
 function onFormInput(event) {
   const key = event.target.name;
   const value = event.target.value;
  
-  key === 'email' ? (objectToLs.email = value) : (objectToLs.message = value);
+  objectToLs[key] = value;
+  // key === 'email' ? (objectToLs.email = value) : (objectToLs.message = value);
   saveToLs('feedback-form-state', objectToLs);
 }
 
@@ -28,6 +30,9 @@ function onLoad() {
     const message = savedData.message;
     refs.formElem.elements.email.value = name || '';
     refs.formElem.elements.message.value = message || '';
+
+    objectToLs.email = name || '';
+    objectToLs.message = message || '';
   }
 }
 
@@ -36,16 +41,19 @@ function onFormSubmit(event) {
   const email = refs.formElem.elements.email.value;
   const message = refs.formElem.elements.message.value;
   if (!email || !message) {
-    // alert('Форма не відправлена ​​введіть email та message');
-    console.log('Форма не відправлена ​​введіть email та message'); return;
+    alert('Форма не відправлена ​​введіть email та message'); return;
+    // console.log('Форма не відправлена ​​введіть email та message'); return;
   } 
   const objectFromLs = {
     email,
     message,
   };
-  console.log("То є об'єкт з полями email, message та поточними їх значеннями:\n\n Форма відправлена :", objectFromLs);
+  console.log(" Форма відправлена :", objectFromLs);
   event.target.reset();
   localStorage.removeItem('feedback-form-state');  
+
+  objectToLs.email = '';
+  objectToLs.message = '';
 }
 
 // --------------Сonnecting styles---------------------------
