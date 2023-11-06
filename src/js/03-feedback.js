@@ -63,23 +63,23 @@ refs.body.style.background = `linear-gradient(to right, ${getRandomHexColor()}, 
 
 // ************************************************
 // *************Додатково**************************
-const btn = document.createElement("a");
-btn.textContent = "Натисніть для заповнення форми.";
-btn.classList.add("link");
+// const btn = document.createElement("a");
+// btn.textContent = "Натисніть для заповнення форми.";
+// btn.classList.add("link");
 
-const addForm = () => {
-  const em = 'adverts@google.com';
-  const mes = 'Thank you for not watching our advertising!';
-  const obj = {
-    email:em,
-    message:mes,
-  }
-  refs.formElem.elements.email.value = em;
-  refs.formElem.elements.message.value = mes;
-  localStorage.setItem('feedback-form-state', JSON.stringify(obj));
+// const addForm = () => {
+//   const email = 'adverts@google.com';
+//   const message = 'Thank you for not watching our advertising!';
+//   const obj = {
+//     email:email,
+//     message:message,
+//   }
+//   refs.formElem.elements.email.value = email;
+//   refs.formElem.elements.message.value = message;
+//   localStorage.setItem('feedback-form-state', JSON.stringify(obj));
   
-}
+// }
 
-btn.addEventListener('click', addForm);
-refs.itemStyle.insertAdjacentElement('afterend', btn)
+// btn.addEventListener('click', addForm);
+// refs.itemStyle.insertAdjacentElement('afterend', btn)
 
